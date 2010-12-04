@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               WWW-Phanfare-API
-version:            0.03
+version:            0.04
 abstract:           Perl wrapper for Phanfare API
 author:
     - Soren Dossing <netcom@sauber.net>
@@ -13,6 +13,7 @@ build_requires:
 requires:
     Carp:          0
     Digest::MD5:   0
+    File::Slurp:   0
     REST::Client:  0
     URI::Escape:   0
     XML::Simple:   0
