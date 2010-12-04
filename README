@@ -2,7 +2,7 @@ NAME
     WWW::Phanfare::API - Perl wrapper for Phanfare API
 
 VERSION
-    Version 0.01
+    Version 0.02
 
 SYNOPSIS
     Create object. Developer API keys required.
@@ -71,9 +71,9 @@ SUPPORT
 
     You can also look for information at:
 
-    *   RT: CPAN's request tracker
+    *   Github's request tracker
 
-        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=WWW-Phanfare-API>
+        <https://github.com/sauber/p5-www-phanfare-api/issues>
 
     *   AnnoCPAN: Annotated CPAN documentation
 

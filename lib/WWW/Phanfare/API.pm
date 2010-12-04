@@ -6,7 +6,7 @@ WWW::Phanfare::API - Perl wrapper for Phanfare API
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =cut
 
@@ -18,7 +18,7 @@ use Digest::MD5 qw(md5_hex);
 use URI::Escape;
 use XML::Simple;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 our $site = 'http://www.phanfare.com/api/?';
 our $AUTOLOAD;
 
@@ -167,9 +167,9 @@ You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker
+=item * Github's request tracker
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=WWW-Phanfare-API>
+L<https://github.com/sauber/p5-www-phanfare-api/issues>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
