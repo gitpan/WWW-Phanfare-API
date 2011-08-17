@@ -6,7 +6,7 @@ WWW::Phanfare::API - Perl wrapper for Phanfare API
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =cut
 
@@ -18,7 +18,7 @@ use Digest::MD5 qw(md5_hex);
 use URI::Escape;
 use XML::Simple;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 our $site = 'http://www.phanfare.com/api/?';
 our $AUTOLOAD;
 
@@ -84,7 +84,7 @@ sub AUTOLOAD {
   my $req = join '&',
     sprintf('%s=%s', 'api_key', $self->{api_key}),
     sprintf('%s=%s', 'method', $method),
-    map { sprintf '%s=%s', $_, ($param{$_}||'') } keys %param;
+    map { sprintf '%s=%s', $_, (defined $param{$_} ? $param{$_} : '') } keys %param;
 
   # Sign request string
   my $sig = md5_hex( $req . $self->{private_key} );
@@ -93,7 +93,7 @@ sub AUTOLOAD {
   $req = join '&',
     sprintf('%s=%s', 'api_key', $self->{api_key}),
     sprintf('%s=%s', 'method', $method),
-    map { sprintf '%s=%s', $_, uri_escape ($param{$_}||'') } keys %param;
+    map { sprintf '%s=%s', $_, uri_escape( defined $param{$_} ? $param{$_} : '' ) } keys %param;
   $req .= sprintf '&%s=%s', 'sig', $sig;
 
   return XML::Simple::XMLin $self->geturl( $site.$req, $content );
